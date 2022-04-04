@@ -1,0 +1,11 @@
+package pdp.uz.appwarehouse.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.RestController;
+import pdp.uz.appwarehouse.entity.Client;
+
+@Repository
+public interface ClientRepository extends JpaRepository<Client,Integer> {
+    boolean existsByPhoneNumber(String phoneNumber);
+}
